@@ -1,0 +1,66 @@
+<ul class="info-container">
+    <li topico>Modelo TCP/IP versus modelo OSI</li>
+    <ul>
+        <li topico>Conceito cliente/servidor</li>
+        <ul>
+            <div class="text-container">
+
+            </div>
+        </ul>
+            
+        <li topico>As 5 camadas do modelo</li>
+        <ul>
+            <li topico sub>Aplicação</li>
+            <ul>
+                <li><div class="text-container">A camada de aplicação faz a comunicação entre os programas e os protocolos de transporte que é a próxima camada. 
+                    Existem vários tipos de protocolos que trabalham nesta camada, cada protocolo tem um propósito. 
+                    A camada de Aplicação se comunica com a de Transporte através de portas, as portas são números padrões, 
+                    que seguem uma sequência. A utilização de números das portas permite a camada de Transporte saber o tipo de conteúdo que esta dentro do pacote, 
+                    sendo assim quando um pacote chegar na porta 25, ele saberá que deve entregar os dados ao protocolo conectado na porta, que no caso é o SMTP, 
+                    que por sua vez entregará os dados a aplicação que o requisitou. (As portas e protocolos serão esclarecidas no próximo tópico)</div></li>
+            </ul>
+
+            <li topico sub>Transporte</li>
+            <ul>
+                <li><div class="text-container">Nesta camada o protocolo mais utilizado é o TCP (Trasmission Control Protocol) este protocolo é responsável por quebrar as informações 
+                    recebidas da camada de cima (Aplicação) em pacotes menores e organizá-las colocando em ordem a mensagem, também verifica a integridade dos dados, 
+                    caso eles tenham algum erro. Quando ele está recebendo dados, o mesmo tem a função de organizar esses pacotes para que a mensagem possa ser interpretada 
+                    pela camada de Aplicação. Quando os dados estão sendo enviados os protocolos adicionam um endereço virtual (cabeçalho),
+                    que tem informações como o número da porta de entrada, a sequência de dados e a soma para verificação da integridade.</div></li>
+            </ul>
+
+            <li topico sub>Internet ou Rede</li>
+            <ul>
+                    <li><div class="text-container">A camada de Internet é a responsável por adicionar um cabeçalho ao pacote colocando o endereço virtual, o endereço IP. 
+                        Ele coloca o endereço IP do computador que esta enviando os dados e o IP do computador que vai receber os dados. 
+                        Para os dados chegarem no destino eles passam por vários pontos antes de chegar no destino, este caminho se 
+                        chama roteamento e os locais pelos quais seus dados passam são os roteadores. Se quiser ver como isso funciona 
+                        abra o Prompt de Comando e digite “tracert google.com”. quando um pacote é enviado o roteador verifica se o computador de destino 
+                        está na rede ou em alguma rede que ele conheça o caminho, se ele não conhecer ele envia o pacote de dados para o gateway padrão 
+                        (outro roteador) e o processo se repete até chegar no computador de destino. O IP é responsável por pegar o pacote recebido pela camada 
+                        Transporte e dividir ele em datagramas, que é um pacote sem nenhum sistema de verificação da integridade dos dados, ou seja, 
+                        um protocolo não confiável, porem quando o dado é transferido pelo protocolo TCP ele passa por um processo de verificação de 
+                        integridade tornando a conexão confiável. Cada datagrama pode suportar no máximo 65.535 bytes, incluindo o cabeçalho (20 ou 24 bytes), 
+                        ou seja, se o pacote da camada de transporte tiver mais do que 65.535 bytes, o protocolo IP divide ele em datagramas, o quanto for necessário.</div></li>
+                </ul>
+
+                <li topico sub>Acesso a Rede ou Interface de Rede</li>
+                <ul>
+                    <li><div class="text-container">Esta camada é definida pelo tipo de rede física que o seu computador está utilizando, que normalmente é Ethernet. 
+                        Como já sabemos o protocolo TCP/IP é um protocolo que atua da camada 3 a 7 do modelo OSI, 
+                        já a Ethernet é um conjunto de protocolos pertencentes a camada 1 e 2 do modelo OSI, ou seja, a Ethernet lida com aspetos físicos de rede. 
+                        A Ethernet possui 3 camada, a LLC (Logic Link Control), a MAC (Media Access Control) e a Physical. 
+                        A LLC tem como objetivo adicionar informação dizendo qual o protocolo que os dados devem ser entregues, 
+                        o MAC monta um quadro que vai ser enviado pela rede com o endereço MAC do computador que esta enviando e o de destino. 
+                        O endereço MAC é um endereço físico da placa de rede do computador, usado para identificar as máquinas em uma rede local.</div></li>
+                </ul>
+
+                <li topico sub>Física</li>
+                <ul>
+                    <li><div class="text-container">A camada física é responsável por pegar o quadro feito pelo MAC e transformar em eletricidade (caso a conexão de rede seja cabeada) 
+                        ou em ondas eletromagnéticas (caso a conexão seja wireless). As camadas LLC e MAC colocam seus próprios cabeçalhos nos datagramas 
+                        vindos da camada de Internet, assim uma estrutura de quadros gerado por essas duas camadas pode ser vista na imagem a seguir.</div></li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>

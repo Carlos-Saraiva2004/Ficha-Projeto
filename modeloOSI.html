@@ -1,0 +1,177 @@
+<ul class="info-container">
+        <li topico>Modelo OSI</li>
+        <ul>
+            <li><div class="text-container">O modelo OSI foi desenvolvido quando as empresas tinham suas próprias tecnologias e 
+                então havia problemas de compatibilidade. As principais organizações que trabalhavam com essa padronização na rede são,
+                 IEEE (Institucion of Electrical and Electronics Engineers), ISO (International Organization of Standardizarion – Criadora do modelo OSI) e a 
+                 ITU (International Telecommunication Union). O modelo OSI (Open System Interconnection) foi desenvolvido com o propósito de ser uma referência para 
+                 protocolos de comunicação, para que houvesse a troca de dados entre os computadores.</div></li>
+            
+            <li topico>Camada de Redes</li>
+            <ul>
+                <li topico sub>Routers e comunicação entre redes</li>
+                <ul>
+                    <div class="text-container">
+
+                    </div>
+                </ul>
+                
+                <li topico sub>Tabela de ARP</li>
+                <ul>
+                    <li><div class="text-container">Address Resolution Protocol, este protocolo habilita o empacotamento do dado do IP em pacotes ethernet e é o 
+                        sistema e protocolo de mensagem que é usado para encontrar a ethernet (hardware) através de um número específico de IP. 
+                        Sem este protocolo, o pacote de ethernet pode não ser gerado do pacote de IP porque o endereço ethernet pode não ser determinado. 
+                        O ARP acha o endereço físico da maquina (MAC – Media Access Control) através do endereço lógico (IP – Internet Protocol). 
+                        Digamos que o PC-A quer se comunicar com o PC-B, ele verificara a sua tabela (onde você pode ver executando o comando arp -a no CMD), 
+                        mas se não souber seu endereço fisico, então não pode ser feito o roteamento para enviar o pacote pela ethernet. 
+                        O ARP (PC-A) envia uma mensagem de broadcast, significa que ele enviara para todos os receptores simultaneamente, 
+                        mas somente para o endereço FF:FF:FF:FF:FF:FF,  questionando a quem pertence o endereço IP. O PC-B respondera a 
+                        mensagem e o PC-A guardara essa informação na sua tabela.</div></li>
+                </ul>
+                
+                <li topico sub>Rotas Estáticas e Dinâmicas</li>
+                <ul>
+                    <div class="text-container">
+
+                    </div>
+                </ul>
+                
+                <li topico sub>Algoritmo de DV</li>
+                <ul>
+                    <div class="text-container">
+
+                    </div>
+                </ul>
+                
+                <li topico sub>RIP versus OSPF</li>
+                <ul>
+                    <li><div class="titulo">RIP</div></li>
+                    <li><div class="text-container">o RIP (Routing Information Protocol) usa um algoritmo vetor-distancia, que monta uma tabela informando as rotas para o roteamento, 
+                        depois o algoritmo escolhe a melhor rota para o pacote passar. Ele atualiza dinamicamente tabelas de roteamento em WANs e na Internet. 
+                        Os pacotes RIP são transmitidos atraves de UDP e IP, usando a porta 520 do UDP tanto para transmissão quanto para recepção. 
+                        Se uma rota não é atualizada dentro de 180 segundos, sua distância é colocada em infinito e a entrada será mais tarde removida das tabelas de roteamento.</div></li>
+
+                    <li><div class="titulo">OSPF</div></li>
+                    <li><div class="text-container">Open Shortest Path First, (roteamento dinâmico de protocolo), baseado no Link State Routing Protocol. 
+                        Aqui é aplicado um protocolo de estado de link ao invés de um protocolo de vetor de distância em que ele testa o estado da sua ligação 
+                        com cada um dos seus vizinhos e envia as informações adquiridas para eles, os próprios roteadores sabem o melhor caminho para a transmissão do pacote.
+                         O algoritmo usado nesse protocolo é o SPF (Shertest Path First). O SPF funciona de modo diferente do vetor-distância, ao invés de ter na tabela as melhores rotas,
+                          todos os routers possuem todos os links da rede. Cada rota contém o identificador de interface, o número da ligação a distância ou métrica. 
+                          Com essas informações os roteadores descobrem sozinhos a melhor rota.</div></li>
+                </ul>
+            </ul>
+            <li topico>Endereçamento</li>
+                <ul>
+                    <li topico sub>Endereços de IP e subnetting</li>
+                    <ul>
+                        <li><div  class="titulo">Endereço IP</div></li>
+                        <li><div class="text-container"><i>Internet Protocol</i>, exceto para ARP e RARP todos os pacotes de dados de todos os protocolos serão empacotados em um pacote 
+                            de dados IP sendo que o IP fornece o mecanismo para usar o software para endereçar e gerenciar pacotes de dados sendo enviados por computadores. 
+                            O IP é um endereço virtual para identificar uma máquina na rede. É este protocolo que faz o datagrama, adiciona um cabeçalho com as informações do 
+                            endereço IP do computador que está enviando e do computador que vai receber. O endereço é composto por 4 grupos de 8 bits cada grupo separado por um ponto, 
+                            o número 172.31.110.10 é um exemplo. Cada grupo é chamado de octeto, repare que cada um deles tem no máximo 3 números, sendo que cada um pode ir de 0 até 255. 
+                            Normalmente os dois primeiros octetos são usados para identificar a rede, mas essa não é uma regra fixa.<br/>
+                            Em um lugar com várias redes pode se ter 172.31 para uma rede e 172.32 para outra e os últimos dois octetos são usados para identificar 
+                            os computadores dentro da rede. Por exemplo, uma rede que tem 500 computadores pode-se usar uma faixa de 172.31.100.1 até 172.31.100.255 
+                            e 172.31.101.1 até 172.31.101.255, mas isso não é uma regra fixa. Como os endereços IP usados em redes locais são semelhantes aos endereços IP da internet, 
+                            usa-se um padrão conhecido como IANA (Internet Assigned Numbers Authority) para a distribuição de endereços nestas redes.<br/>Assim, determinadas 
+                            faixas de IP são usadas para redes locais, enquanto outras são usadas na internet. Não há problema de termos o mesmo endereço IP em redes internas diferentes 
+                            (caso elas não se comuniquem), porém isso não pode acontecer na internet, nela precisamos que cada computador tenha um endereço IP exclusivo.
+                             O padrão IANA divide a utilização de endereços IP para redes locais em, basicamente, 3 classes. Essa divisão foi feita de forma a evitar ao máximo 
+                             o desperdício de endereços IP que podem ser utilizados em uma rede:<br/><br/><b>Classe A:</b> 10.0.0.0 a 10.255.255.255 - Permite até 16 milhões de computadores em cada rede.
+                            (máximo de 1 rede)<br/><br/><b>Classe B:</b> 172.16.0.0 a 172.31.255.255 - Permite até 65.534 computadores em uma rede. (máximo de 21 redes)<br/><br/>
+                            <b>Classe C:</b> 192.168.0.0 a 192.168.255.255 - Permite até 254 computadores em uma rede. (máximo de 255 redes)<br/><br/>
+                            Estamos falando de IPv4 que significa Internet Protocol version 4, porém temos também o IPv6 que é o sucessor natural do IPv4. 
+                            O IPv4 transfere endereços de protocolos de 32 bits, o que sustenta 4,29 bilhões de endereços IP pelo mundo todo, 
+                            que é um número limitado devido à quantidade de pessoas que tem acesso à internet atualmente e este número só tende a crescer, 
+                            por isso foi feito o IPv6 que é um endereço de 128 bits, um hexadecimal, ou seja, ele é um endereço que faz uso de letras e números 
+                            aumentando a quantidade de combinações possíveis. O novo sistema suportaria algo como 340.282.366.920.938.000.000.000.000.000.000.000.000 
+                            que é um número bem alto que sustentará os endereços IP por um bom tempo. Os dois sistemas são usados paralelamente, 
+                            porém atualmente o IPv4 vem sendo substituído, já tendo avido testes do IPv6.
+                        </div></li>
+
+                        <li><div class="titulo">Subnetting</div></li>
+                        <li><div class="text-container">
+                        </div></li>
+                    </ul>
+                </ul>
+            
+            <li topico>Camada de transporte do modelo OSI</li>
+            <ul>
+                <li topico sub>Objetivos da camada 4</li>
+                <ul>
+                    <li><div class="text-container">É esta camada que faz o envio e o recebimento dos pacotes ele gerência o transporte do pacote para garantir a entrega. 
+                    Ela também entrega os dados com consistência, sem erros ou duplicações.</div></li>
+                </ul>
+                
+                <li topico sub>Protocolos TCP e UDP</li>
+                <ul>
+                    <li><div class="titulo">TCP</div></li>
+                    <li><div class="text-container">TCP – Transmission Control Protocol, é o protocolo de transporte mais utilizado, tem uma conexão confiável para controlar 
+                        o gerenciamento das aplicações a nível de serviços entre computadores, além de fazer o transporte em sequência do dado, 
+                        também verifica a integridade dele. Este protocolo pode quebrar o dado em pacotes e organizá-los da maneira que achar melhor.</div></li>
+
+                    <li><div class="titulo">UDP</div></li>
+                    <li><div class="text-container">UDP – User Datagram Protocol, é o segundo protocolo de transporte mais utilizado, não tem uma conexão confiável e não faz 
+                        a verificação da integridade do dado, devido a isso, seu transporte é bem mais rápido, normalmente é utilizado para 
+                        transferência de dados menos importantes, normalmente em requisições DNS. Quem faz a verificação da integridade dos dados e a 
+                        organização dos pacotes, é a camada de Aplicação, assumindo o papel do protocolo TCP.</div></li>
+                </ul>
+                
+                <li topico sub>Multiplexagem e demultiplexagem</li>
+                <ul>
+                    <div class="text-container">
+
+                    </div>
+                </ul>
+            </ul>
+            
+            
+            <li topico>Camadas de Sessão e apresentação – modelo OSI</li>
+            <ul>
+                <li><div class="titulo">Apresentação</div></li>
+                <li><div class="text-container">Assegura a compatibilidade entre camadas de aplicação de diferentes sistemas. Esta camada é responsável por fazer a “tradução” 
+                    de dados para que a próxima camada as use. Esta camada também encripta e compacta os dados, faz a conversão, compactação e criptografia desses dados.</div></li>
+
+                <li><div class="titulo">Sessão</div></li>
+                <li><div class="text-container">Esta camada inclui hosts e estabelece uma conexão entre eles. Além de realizar o estabelecimento da sessão,
+                    esta camada também provém um suporte a ela, como registos de log e realizando tarefas de segurança, ela é responsável pela comunicação.</div></li>
+            </ul>
+            
+            
+            <li topico>Camada de aplicação – modelo OSI</li>
+            <ul>
+                <li topico sub>DNS</li>
+                <ul>
+                    <div class="text-container">
+
+                    </div>
+                </ul>
+                
+                <li topico sub>Telnet</li>
+                <ul>
+                    <li><div class="text-container">(23/TCP, UDP) - é utilizado para abrir uma sessão remota em outro computador. 
+                        Ele se baseia em TCP para o transporte e é definido pela RFC854.</div></li>
+                </ul>
+                
+                <li topico sub>FTP</li>
+                <ul>
+                    <li><div class="text-container">(21/TCP) – File Transfer Protocol, permite a transferência de arquivos através de usuário e senha de um computador,
+                         este processo pode ser feito no Windows Explorer.</div></li>
+                </ul>
+                
+                <li topico sub>SMTP</li>
+                <ul>
+                    <li><div class="text-container">(25/TCP, UDP) – Simple Mail Transfer Protocol, é um protocolo utilizado para a transferencia de e-mails, 
+                        sendo que ele é uma aplicação utilizada para transporte e não um meio de transporte como a TCP ou UDP, por isso ela está na camada de Aplicação.</div></li>
+                </ul>
+                
+                <li topico sub>HTTP</li>
+                <ul>
+                    <li><div class="text-container">(80/TCP) – Hipertext Transfer Protocol, é utilizado para fazer a transferencia de sites HTML de servidores 
+                        para navegadores instalados na máquina cliente, isto é, uma relação cliente-servidor, 
+                        onde temos alguém que fornece (servidor) e alguém que utiliza (cliente).</div></li>
+                </ul>
+            </ul> 
+        </ul>
+    </ul>

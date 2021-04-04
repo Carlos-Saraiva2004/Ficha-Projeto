@@ -1,0 +1,151 @@
+.info-container{
+    display: block;
+    margin: 30px 20px 20px 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text-container{
+    width: 800px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #22252C;
+    color: #fffafa;
+    margin-left: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.4s;
+    text-align: justify;
+}
+
+.text-container:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: #362a44;
+}
+
+.sobre-infos{
+    margin: 10px;
+    color: #fffafa;
+}
+
+.sobre-titulo{
+    color: #C0B3A0;
+}
+
+#sobre{
+    border: solid 2px #E14658;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #22252C;
+    padding: 0 30px 0 30px;
+    transition: 1s;
+}
+#sobre:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: #362a44;
+}
+
+#nome{
+    margin: 10px;
+    text-align: center;
+    color: #E14658;
+}
+
+ul{
+    display: none;
+}
+
+#img1 img{
+    display: block;
+    width: 70%;
+    height: 65%;
+    grid-area: img1;
+    margin: auto;
+}
+
+#img2 img{
+    display: block;
+    width: 80%;
+    height: 85%;
+    grid-area: img2;
+    margin: auto;
+}
+
+#img1{
+    text-align: center;
+    margin: 20px;
+    border: 1px solid #E14658;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    background-color: #22252C;
+    transition: 1.3s;
+}
+
+#img1:hover{
+    background-color: #342a42;
+    cursor: pointer;
+}
+
+#img2{
+    text-align: center;
+    margin: 20px;
+    border: 1px solid #E14658;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    background-color: #22252C;
+    transition: 1.3s;
+}
+
+#img2:hover{
+    background-color: #342a42;
+    cursor: pointer;
+}
+
+aside[imagens]{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'img1' 'img2';
+
+}
+
+li[topico]{
+    color: #E14658;
+    font-weight: bold;
+    padding: 5px;
+}
+
+li[topico][sub]{
+    color: #3F3250;
+    font-style: italic;
+    padding: 5px;
+}
+
+li[topico]:hover, li[topico][sub]:hover{
+    cursor: pointer;
+}
+
+[rodape] p{
+    color: #E14658;
+    font-size: 0.8em;
+    text-align: right;
+    margin: 20px;
+}
+
+.titulo{
+    background-color: #3F3250;
+    color: #fffafa;
+    width: 200px;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 15px;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+dd{
+    margin-left: 50px;
+}

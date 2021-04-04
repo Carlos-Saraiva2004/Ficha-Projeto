@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carlos Saraiva</title>
+    <link rel="stylesheet" href="css/form.css"/>
+</head>
+<body>
+    <h1>Formulário de contacto</h1>
+
+    <form name="formulario" method="post" action="form">
+        <div class="input-container">
+            <label>Nome: </label>
+            <input type="text" class="inputs text" id="nome" name="nome" autocomplete="off" required placeholder="Nome..."/> <span id="requiredFieldNome">Obrigatório!</span>
+        </div>
+            
+        <div class="input-container">
+            <label>Email: </label>
+            <input type="text" class="inputs text" id="email" name="email" autocomplete="off" required placeholder="exaple@gmail.com"/> <span id="requiredFieldEmail">Obrigatório!</span>
+            <span id="emailCheck">Este campo aceita somente Emails!</span>
+        </div>
+            
+        <div class="input-container">
+            <label>Data de Nascimento: </label>
+            <input type="date" class="inputs" placeholder="x" name="date"/>
+        </div>
+            
+        <div class="input-container">
+            <label>Cometários/Dúvidas: </label><br>
+            <textarea placeholder="Digite seu comentario aqui..." name="comentarios"></textarea>
+        </div>
+            
+        <div class="buttons-container">
+            <button submit onclick="validate()">Enviar</button>
+            <a class="buttons" href="index.html">Voltar</a>
+            <button type="reset" class="buttons">Reset</button>
+        </div>
+    </form>
+    <script src="js/form.js"></script>
+</body>
+</html>
