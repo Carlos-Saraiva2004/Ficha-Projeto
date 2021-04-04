@@ -2,6 +2,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const fs = require('fs')
 const app = express()
+const port = process.env.PORT;
 
 app.use(express.static('.')) //serve as pastas, paginas estáticas, no local em que este ficheiro estiver guardado
 app.use('/form', bodyParser.urlencoded({extended: true})) // responsavel por fazer o parse da url quando é submetido um formulario
@@ -22,4 +23,4 @@ app.post('/form', (req, res) => {
     })
 })
 
-app.listen(8080, () => console.log("executando..."))
+app.listen(port, () => console.log("executando..."))
